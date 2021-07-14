@@ -5,21 +5,25 @@ new Vue({
     guest_name: '',
     phone : '',
     email : '',
-    guests : []
+    guests : [],
+    errors : {}
   },
 
   methods: {
 
     onSubmit() {
-      axios.post('/guests', {
+      axios.post('/api/guests', {
         'guest_name' : this.guest_name,
         'phone' : this.phone,
         'email' : this.email
-      }).then(response => this.guests = response.data);
+      })
+      .then(response => console.log(response))
+      .catch(error => this.errors = error.response.data);
+      axios.get('/api/guests').then(response => this.guests = response.data);
     }
   },
 
   mounted() {
-    axios.get('/guests').then(response => this.guests = response.data);
+      axios.get('/api/guests').then(response => this.guests = response.data);
   }
 });

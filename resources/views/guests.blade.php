@@ -74,6 +74,8 @@
                     <h2>Guests</h2>
                     
                     <div class="card-block" id="app">
+
+                        @include('template.errors')
                                
                                 <form method="POST" action="/guests" @submit.prevent="onSubmit">
                                     {{ csrf_field() }}

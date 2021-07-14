@@ -16,5 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'GuestsController@index');
 
-Route::get('/guests', 'GuestsController@indexguests');
-Route::post('/guests', 'GuestsController@store');
+
