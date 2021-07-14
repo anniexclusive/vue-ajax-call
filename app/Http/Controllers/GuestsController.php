@@ -44,7 +44,7 @@ class GuestsController extends Controller
         $this->validate($request, [
             'guest_name' => 'required',
             'phone' => 'required',
-            'email' => 'required|email',                                
+            'email' => 'required|email|unique:guests',                                
             ]);     
     }
 
