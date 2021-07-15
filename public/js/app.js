@@ -16,7 +16,7 @@ new Vue({
         'guest_name' : this.guest_name,
         'phone' : this.phone,
         'email' : this.email
-      })
+      })      
       .then(response => console.log(response))
       .catch(error => this.errors = error.response.data);
       axios.get('/api/guests').then(response => this.guests = response.data);

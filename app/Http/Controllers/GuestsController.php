@@ -34,9 +34,7 @@ class GuestsController extends Controller
      */
     public function create()
     {
-        return view('pages.index', [
-            'guests' => Guest::all()
-        ]);
+        //
     }
 
     public function runValidate($request)
